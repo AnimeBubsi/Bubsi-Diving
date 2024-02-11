@@ -17,11 +17,7 @@ function loadAnimDict(dict)
         Citizen.Wait(5)
     end
 end
-RegisterCommand('Bubsi', function(source)
-TriggerServerEvent('Bubsipalkkio', source)
-print('sdawada')
 
-end)
 
 Citizen.CreateThread(function()
     while true do
