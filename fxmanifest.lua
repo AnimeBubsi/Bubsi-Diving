@@ -9,6 +9,10 @@ shared_scripts {
     'Config.lua'
 }
 
-client_script 'Clientti.lua'
+client_scripts {
+    'Clientti.lua',
+    'cl_utils.lua'
+}
 
 server_script 'Serveri.lua'
+
