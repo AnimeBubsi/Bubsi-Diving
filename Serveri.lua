@@ -23,8 +23,8 @@ local nimi = GetPlayerName(source)
     local chanssi = math.random(1, 100)
     math.randomseed(GetGameTimer())
 	  local Pelaaja = ESX.GetPlayerFromId(source)
-	   if chanssi > 1 and chanssi < 30 then 	
-		Config.notification(5000, Config.locales.eimitaa, 'serveri', Config.types.error)
+	   if chanssi > 1 and chanssi < 30 then	
+		TriggerClientEvent('Bubsinotify', source, 5000, Config.locales.eimitaa, Config.types.error)
 	   elseif chanssi > 30 and chanssi < 99 then
 		Pelaaja.addInventoryItem(RandomItem(), 1)
 		Dclogit(Config.vari, Config.locales.otsikko, nimi.. Config.locales.loys.. "**" ..RandomItem().. "**")
@@ -89,7 +89,7 @@ AddEventHandler('Bubsipalkkio', function(Bubsikey)
     local chanssi = math.random(1, 100)
 	  local Pelaaja = QBCore.Functions.GetPlayer(source)
 	   if chanssi > 1 and chanssi < 30 then 	
-		Config.notification(5000, Config.locales.eimitaa, 'serveri', Config.types.error)
+		TriggerClientEvent('Bubsinotify', source, 5000, Config.locales.eimitaa, Config.types.error)
 	   elseif chanssi > 30 and chanssi < 99 then
 		 Pelaaja.Functions.AddItem(RandomItem(), 1)
 	   elseif chanssi == 100 then
@@ -132,8 +132,8 @@ ESX.RegisterServerCallback('Bubsioxygentank', function(source, cb)
     end  
 end)
 
-
 end
+
 
 function Dclogit(color, name, message, dc, footer)
    if Config.uselogs then
