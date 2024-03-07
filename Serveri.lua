@@ -122,11 +122,11 @@ AddEventHandler('Bubsitankki', function(Bubsikey)
 end)
 
 
-ESX.RegisterServerCallback('Bubsioxygentank', function(source, cb)
+QBCore.Functions.CreateCallback('Bubsioxygentank', function(source, cb)
     local Pelaaja = QBCore.Functions.GetPlayer(source)
-
-      if Pelaaja.Functions.GetItemByName('emptyoxygenmask') > 0 then
-	cb(true)
+    local itemi = Pelaaja.Functions.GetItemByName('emptyoxygenmask')
+      if itemi  then
+    cb(true)
       else
         cb(false) 
     end  
